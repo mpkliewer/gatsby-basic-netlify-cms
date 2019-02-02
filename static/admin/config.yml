@@ -2,14 +2,18 @@ backend:
   name: github
   repo: mpkliewer/gatsby-basic-netlify-cms
 
+# publish_mode: editorial_workflow
+
 media_folder: static/assets
 public_folder: assets
 
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: "src/data/blogs"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
